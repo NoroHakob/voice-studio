@@ -129,7 +129,7 @@ export async function POST(request: Request) {
     transcriptId: transcript.id,
   });
 
-  // Ingest usage event to Polar (fire-and-forget, don't block response)
+    // Ingest usage event to Polar (fire-and-forget, don't block response)
   if (env.POLAR_METER_STT_TRANSCRIPTION) {
     polar.events
       .ingest({
@@ -138,14 +138,13 @@ export async function POST(request: Request) {
             name: env.POLAR_METER_STT_TRANSCRIPTION,
             externalCustomerId: orgId,
             metadata: {},
-            timestamp: new Date(),
           },
         ],
       })
-      .catch(() => {
-        // Silently fail - don't break the user experience for metering errors
-      });
+      .catch((err) => console.error("[polar] stt event failed", err));
+  } else {
+    console.warn("[polar] POLAR_METER_STT_TRANSCRIPTION is not set");
   }
-
+  
   return Response.json({ id: transcript.id }, { status: 201 });
 }
