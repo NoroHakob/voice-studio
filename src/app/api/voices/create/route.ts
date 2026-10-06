@@ -173,7 +173,6 @@ export async function POST(request: Request) {
           name: env.POLAR_METER_VOICE_CREATION,
           externalCustomerId: orgId,
           metadata: {},
-          timestamp: new Date(),
         },
       ],
     })
