@@ -76,3 +76,18 @@ model Generation {
   @@index([orgId])
   @@index([voiceId])
 }
+model Transcript {
+  id String @id @default(cuid())
+
+  orgId String
+
+  filename String
+  language String @default("en")
+  text     String
+  modelId  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orgId])
+}
