@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/sidebar";
 import { SupportDeskScript } from "@/components/support-desk-script";
 import { DashboardSidebar } from "@/features/dashboard/components/dashboard-sidebar";
+import { SupportVoiceButton } from "@/features/support/components/support-voice-button";
 
 export default async function DashboardLayout({
   children,
@@ -24,6 +25,7 @@ export default async function DashboardLayout({
         </main>
       </SidebarInset>
       <SupportDeskScript />
+      {process.env.NEXT_PUBLIC_SUPPORTDESK_WORKSPACE_ID && <SupportVoiceButton />}
     </SidebarProvider>
   )
 };

@@ -19,6 +19,7 @@ export const env = createEnv({
     CHATTERBOX_API_URL: z.url(),
     CHATTERBOX_API_KEY: z.string().min(1),
     MODAL_STT_URL: z.url(),
+    SUPPORT_VOICE_ID: z.string().min(1).optional(),
   },
   experimental__runtimeEnv: {},
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
