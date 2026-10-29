@@ -1,6 +1,7 @@
-import { Headphones, ThumbsUp } from "lucide-react";
+import { ThumbsUp } from "lucide-react";
 import Link from "next/link";
 
+import { SupportButton } from "@/components/support-button";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
@@ -30,12 +31,7 @@ export function PageHeader({
               <span className="hidden lg:block">Feedback</span>
             </Link>
          </Button>
-         <Button variant="outline" size="sm" asChild>
-          <Link href="mailto:business@codewithantonio.com">
-            <Headphones />
-            <span className="hidden lg:block">Need help?</span>
-          </Link>
-        </Button>
+         <SupportButton />
       </div>
     </div>
   );

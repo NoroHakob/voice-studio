@@ -4,6 +4,7 @@ import {
   SidebarInset, 
   SidebarProvider
 } from "@/components/ui/sidebar";
+import { SupportDeskScript } from "@/components/support-desk-script";
 import { DashboardSidebar } from "@/features/dashboard/components/dashboard-sidebar";
 
 export default async function DashboardLayout({
@@ -22,6 +23,7 @@ export default async function DashboardLayout({
           {children}
         </main>
       </SidebarInset>
+      <SupportDeskScript />
     </SidebarProvider>
   )
 };

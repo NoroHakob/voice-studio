@@ -36,6 +36,7 @@ import {
 import Link from "next/link";
 import { UsageContainer } from "@/features/billing/components/usage-container";
 import { VoiceCreateDialog } from "@/features/voices/components/voice-create-dialog";
+import { openSupportDesk } from "@/lib/support-desk";
 import { useState } from "react";
 
 interface MenuItem {
@@ -137,8 +138,8 @@ export function DashboardSidebar() {
     },
     {
       title: "Help and support",
-      url: "mailto:business@codewithantonio.com",
       icon: Headphones,
+      onClick: openSupportDesk,
     },
   ];
 

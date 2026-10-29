@@ -1,9 +1,10 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import { Headphones, ThumbsUp } from "lucide-react";
+import { ThumbsUp } from "lucide-react";
 import Link from "next/link";
 
+import { SupportButton } from "@/components/support-button";
 import { Button } from "@/components/ui/button";
 
 export function DashboardHeader() {
@@ -27,12 +28,7 @@ export function DashboardHeader() {
             <span className="hidden lg:block">Feedback</span>
           </Link>
         </Button>
-        <Button variant="outline" size="sm" asChild>
-          <Link href="mailto:business@codewithantonio.com">
-            <Headphones />
-            <span className="hidden lg:block">Need help?</span>
-          </Link>
-        </Button>
+        <SupportButton />
       </div>  
     </div>
   );
